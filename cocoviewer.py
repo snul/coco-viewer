@@ -8,6 +8,7 @@ import colorsys
 import json
 import logging
 import os
+import sys
 import random
 import tkinter as tk
 import tkinter.ttk as ttk
@@ -873,18 +874,21 @@ def print_info(message: str):
 
 def main():
     print_info("Starting...")
-    args = parser.parse_args()
+#    args = parser.parse_args()
     root = tk.Tk()
     root.title("COCO Viewer")
 
-    if not args.images or not args.annotations:
+    images = sys.argv[1] + "/coco/images/"
+    annotations = sys.argv[1] + "/coco/bbox.json"
+
+    if not images or not annotations:
         root.geometry("300x150")  # app size when no data is provided
         messagebox.showwarning("Warning!", "Nothing to show.\nPlease specify a path to the COCO dataset!")
         print_info("Exiting...")
         root.destroy()
         return
 
-    data = Data(args.images, args.annotations)
+    data = Data(images, annotations)
     statusbar = StatusBar(root)
     sliders = SlidersBar(root)
     objects_panel = ObjectsPanel(root)
