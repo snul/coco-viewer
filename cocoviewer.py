@@ -878,8 +878,8 @@ def main():
     root = tk.Tk()
     root.title("COCO Viewer")
 
-    images = sys.argv[1] + "/coco/train/images"
-    annotations = sys.argv[1] + "/coco/bbox.json"
+    images = sys.argv[1] + "/images"
+    annotations = sys.argv[1] + "/bbox.json"
 
     if not images or not annotations:
         root.geometry("300x150")  # app size when no data is provided
