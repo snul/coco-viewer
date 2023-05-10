@@ -878,7 +878,7 @@ def main():
     root = tk.Tk()
     root.title("COCO Viewer")
 
-    images = sys.argv[1] + "/coco/images/"
+    images = sys.argv[1] + "/coco/train/images"
     annotations = sys.argv[1] + "/coco/bbox.json"
 
     if not images or not annotations:
