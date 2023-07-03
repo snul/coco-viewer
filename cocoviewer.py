@@ -175,7 +175,7 @@ def draw_bboxes(draw, objects, labels, obj_categories, ignore, width, label_size
                         font = ImageFont.truetype("DejaVuSans.ttf", size=label_size)
                     except OSError:
                         # Should work for Windows
-                        font = ImageFont.truetype("Arial.ttf", size=label_size)
+                        font = ImageFont.truetype("arial.ttf", size=label_size)
                 except OSError:
                     # Load default, note no resize option
                     # TODO: Implement notification message as popup window
